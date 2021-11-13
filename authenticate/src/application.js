@@ -1,12 +1,13 @@
 const express = require('express')
+const authenticateMiddleware = require('./middlewares/authenticate.middleware')
 
 const application = express()
 
-application.get('/message', async (request, response) => {
+application.get('/message', authenticateMiddleware, async (request, response) => {
   response
     .status(401)
     .json({
-      error: 'Unauthorized: Access is denied due to invalid credentials'
+      message: 'Welcome to development world'
     })
 })
 
