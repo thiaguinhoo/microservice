@@ -4,10 +4,16 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint:check": "standard",
+    "lint:fix": "standard --fix"
+  },
+  "standard": {
+    "env": ["jest"]
   },
   "devDependencies": {
     "jest": "^27.3.1",
+    "standard": "^16.0.4",
     "supertest": "^6.1.6"
   },
   "dependencies": {
